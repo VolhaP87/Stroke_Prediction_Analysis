@@ -47,4 +47,16 @@ Different machine learning algorithms will be built in the following way:
 
 #### Logistic Regression Models
 The logistic regression baseline model with default parameters had recall of 74%, meaning that if a person belongs to class 1 (having a stroke), there is about 74% chance that the model will correctly label this person as class 1. The number of false negatives was equal to 16. The accuracy of the model constituted 73%, meaning that the model correctly identifies if a person will have a stroke about 73% of the time.
-The logistic regression tuned model performed a little better: the recall score got higher (76%), while the number of false negatives got a little less (15). The logistic regression tuned model was chosen for future analysis.
+The logistic regression tuned model (penalty='l2', solver='liblinear') performed a little better: the recall score got higher (76%), while the number of false negatives got a little less (15). The logistic regression tuned model was chosen for future analysis.
+
+#### Decision Tree Models
+The decision tree baseline model had a recall of 34%, which was less than the logistic regression models. The number of false negatives got higher and became equal to 41. The model used all the features except "work_type_Never_worked" and "work_type_children" with the most important being "age", "bmi" and "avg_glucose_level". The model was then optimized to check if better recall could be achieved.
+The decision tree tuned model (max_depth=4, min_samples_split=18, min_samples_leaf=9, max_features=13) performed much better than the baseline model. It showed the recall of 74% with false negatives being equal to 16. The model considered "age", "work_type_Private", "bmi" and "avg_glucose_level" as the most important features. The model was chosen for future analysis.
+
+#### Bagged Trees Models
+The bagged tree baseline model (n_estimators=100) didn't perform well enough. The recall score was equal to 34%, while the number of false negatives became 41. The model got to be tuned to perform better.
+The bagged tree tuned model (max_features=2) didn't perform differently: the recall score stayed the same 34%, while the number of false negatives remained equal to 41. But because the accuracy score of the bagged tree tuned model was higher, the model was chosen for further analysis.
+
+#### Random Forest Models
+The random forest baseline model didn't perform well enough: it had a low recall score (32%) with the high number of false negatives (42). The model gave the strongest importance to "age", "avg_glucose_level" and "bmi" columns. The model was then tuned to find if it could perform any better.
+The recall score of random forest tuned model (max_features=7) got a little better (35%), and the number of false negatives got a little bit lower (40). The model considered "age", "bmi", and "avg_glucose_level" as the most important features and didn't take into consideration "work_type_Never_worked". The random forest tuned model was chosen for further analysis.
