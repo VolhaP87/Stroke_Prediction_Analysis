@@ -37,13 +37,13 @@ In order to build any ML model, a train-test split should be performed. The pred
 
 The class imbalance in the training and test set was then found and SMOTE-NC class was used in order to improve the models' performance on the minority class. SMOTE-NC was applied because the dataset contained both categorical and numerical features.
 
-Since the World Health Organization really cares about avoiding 'false negatives' more than avoiding 'false positives' (it is a crime to say that a person will not have a stroke, and then he/she will develop it, than predict that the person will have a stroke and he/she will not actually have it), higher recall score and lower number of false negatives will be the metrics the ML models will be evaluated upon. The model with the highest recall will be chosen for the prediction.
+Since the World Health Organization really cares about avoiding 'false negatives' more than avoiding 'false positives' (it is a crime to say that a person will not have a stroke, and then he/she will develop it, than predict that the person will have a stroke and he/she will not actually have it), higher recall score and lower number of false negatives were the metrics the ML models were evaluated upon. The model with the highest recall was chosen for the prediction.
 
-Different machine learning algorithms will be built in the following way:
-- the baseline model will be build and evaluated;
-- one or more hyperparameters will be tuned to find if the model will perform any better;
-- the optimized model will be run and checked for any improvements in the performance;
-- the model with the highest recall score for each algorithm type will be chosen for further analysis.
+Different machine learning algorithms were built in the following way:
+- the baseline model was build and evaluated;
+- one or more hyperparameters were tuned to find if the model could perform any better;
+- the optimized model was run and checked for any improvements in the performance;
+- the model with the highest recall score for each algorithm type was chosen for further analysis.
 
 #### Logistic Regression Models
 The logistic regression baseline model with default parameters had recall of 74%, meaning that if a person belongs to class 1 (having a stroke), there is about 74% chance that the model will correctly label this person as class 1. The number of false negatives was equal to 16. The accuracy of the model constituted 73%, meaning that the model correctly identifies if a person will have a stroke about 73% of the time.
@@ -80,6 +80,7 @@ The performance of the naive bayes tuned model (with the hyperparameter var_smoo
 In order to build knn and svm models, one more step was needed: the data had to be normalized. That had to be done for two reasons: 
 - to avoid information "leaking" from the test set into the training set;
 - to avoid having a larger impact that larger scaled features have on the distance between the points in distance-based classifiers.
+
 Normalization (AKA Standardization or Scaling) means making sure that all of the data is represented at the same scale. The most common way to do this is to convert all numerical values to z-scores.
 
 #### KNN Models
