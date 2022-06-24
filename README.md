@@ -1,4 +1,4 @@
-![](Images/brain.jpeg)
+![](Images/stroke.jpeg)
 
 # Stroke Prediction Analysis
 Authors: Volha Puzikava
