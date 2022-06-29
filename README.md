@@ -58,8 +58,8 @@ The decision tree baseline model had a recall of 31%, which was less than the lo
 The decision tree tuned model (max_depth=5, min_samples_split=15, min_samples_leaf=9, max_features=15) performed much better than the baseline model. It showed the recall of 76% with false negatives being equal to 15. The model considered "age" and "no_ever_married" as the most important features. The model was chosen for future analysis.
 
 #### Bagged Trees Models
-The bagged tree baseline model didn't perform well enough. The recall score was equal to 21%, while the number of false negatives became 49. The model got to be tuned to perform better.
-The bagged tree tuned model (with n_estimators=100 and max_features=19) didn't perform better: the recall score stayed the same (19%), while the number of false negatives was equal to 49. The bagged tree baseline model was chosen for further analysis.
+The bagged tree baseline model didn't perform well enough. The recall score was equal to 19%, while the number of false negatives became 50. The model got to be tuned to perform better.
+The bagged tree tuned model (with n_estimators=100 and max_features=2) didn't perform better: the recall score dropped to 5%, while the number of false negatives increased to 59. The bagged tree baseline model was chosen for further analysis.
 
 #### Random Forest Models
 The random forest baseline model didn't perform well enough: it had a low recall score (10%) with the high number of false negatives (56). The model gave the strongest importance to "age", "bmi", and "avg_glucose_level" columns. The model was then tuned to find if it could perform any better.
